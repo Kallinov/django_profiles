@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    {% if not profile.is_public and request.user.id != profile.user_id %}
+        <h1>Private profile</h1>
+    {% else %}
+        <h1>{{ profile.id }}</h1>
+        <p>{{ profile.display_name }}</p>
+        {% if request.user.id == profile.user_id %}
+            <h1>ID</h1>
+        {% endif %}
+        <p>{{ profile.bio }}</p>
+        <img src="http://127.0.0.1:8000/media/{{ profile.avatar }}">
+        <p>{{ profile.birth_date }}</p>
+        <p>{{ profile.social_links }}</p>
+        <p>{{ profile.is_public }}</p>
+        <p>{{ profile.show_email }}</p>
+        <p>{{ profile.show_social_links }}</p>
+    {% endif %}
+</body>
+</html>

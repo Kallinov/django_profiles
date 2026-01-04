@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Profile</title>
+</head>
+<body>
+    <form action="/profiles/add/" enctype="multipart/form-data" method="post" style="display: flex; flex-direction: column; justify-content: center; padding-left: 350px; padding-right: 350px; gap: 10px">
+        {% csrf_token %}
+        <input type="text" name="display_name" id="display_name" placeholder="Display name">
+        <input type="email" name="email" id="email" placeholder="Email">
+        <textarea name="bio" id="bio" placeholder="bio"></textarea>
+        <input type="date" name="birth_date" id="birth_date" placeholder="Birth date">
+        <input type="text" name="links" id="Telegram" placeholder="Telegram">
+        <input type="text" name="links" id="Github" placeholder="Github">
+        <input type="text" name="links" id="LinkedIn" placeholder="LinkedIn">
+        <input type="file" name="avatar" id="avatar">
+        <button>Send</button>
+    </form>
+</body>
+</html>
